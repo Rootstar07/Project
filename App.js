@@ -1,21 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { Text, StyleSheet } from "react-native";
 
-export default function App() {
+const onPressTitle = () => {
+  console.log("title pressed");
+};
+
+const TextInANest = () => {
+  const titleText = useState("지지 않는 꽃");
+  const bodyText = useState("사실 이건 새둥지라고 볼수없다.");
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Text style={styles.baseText}>
+      <Text style={styles.titleText} onPress={onPressTitle}>
+        {titleText}
+        {"\n"}
+        {"\n"}
+      </Text>
+      <Text numberOfLines={5}>{bodyText}</Text>
+    </Text>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: "bold"
+  }
 });
+
+export default TextInANest;
