@@ -1,30 +1,33 @@
 import React, { useEffect, useState } from "react";
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 import mainstroy from "./mainstory.json";
 import Fade from "react-reveal/Fade";
 
-let content = "사실 새장이다";
-
 const TextInANest = () => {
   const titleText = useState("지지 않는 꽃");
-  const bodyText = useState(content);
   const objec = mainstroy;
 
   const [value, setValue] = useState(0);
-  const [bodyText2, setbodyText2] = useState("첫번째 이야기");
+  const [bodyText, setbodyText] = useState("첫번째 이야기");
   const [chapter, setChapter] = useState(0);
+  const [fun, setFun] = useState(0);
 
-  const onIncrease = () => {
+  const buttonClick = () => {
     setValue((value) => value + 1);
-    /*setbodyText2((bodyText2) => bodyText2 + objec[chapter][value][value]);
+    setbodyText((bodyText) => bodyText + objec[value]);
     /*setStaus((status) => objec[value][value]);*/
   };
 
-  const test = () => {
+  const buttonClick2 = () => {
+    setValue((value) => value + 2);
+    setbodyText((bodyText) => bodyText + objec[value]);
+    /*setStaus((status) => objec[value][value]);*/
+  };
+
+  const storyTeller = () => {
     return (
       <Text>
-        <Text onPress={() => onIncrease()}>계속</Text>
-        <Text>vdg</Text>
+        <Text onPress={() => buttonClick()}>계속</Text>
       </Text>
     );
   };
@@ -32,7 +35,6 @@ const TextInANest = () => {
   return (
     <View style={styles.baseView}>
       <View style={styles.uiView}></View>
-
       <View style={styles.storyView}>
         <Text style={styles.baseText}>
           <Fade bottom>
@@ -42,21 +44,14 @@ const TextInANest = () => {
               {"\n"}
             </Text>
           </Fade>
-
-          <Text>현재 카운터 값은 {value}입니다.</Text>
-
+          <Text>현재 페이지: {value}쪽</Text>
           {"\n"}
           {"\n"}
-
-          <Text>현재 이야기 : {bodyText2}</Text>
-          {"\n"}
-          {"\n"}
-
           <Text>현재 상태 : {value}</Text>
           <Text numberOfLines={5}>{bodyText}</Text>
           {"\n"}
           {"\n"}
-          {test()}
+          {storyTeller()}
         </Text>
       </View>
     </View>
