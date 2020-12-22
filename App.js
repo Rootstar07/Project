@@ -5,26 +5,26 @@ import Fade from "react-reveal/Fade";
 
 const TextInANest = () => {
   const titleText = useState("지지 않는 꽃");
-  const objec = mainstroy;
+  const object = mainstroy;
 
-  const [value, setValue] = useState(0);
+  const [ID, setID] = useState(0);
   const [bodyText, setbodyText] = useState("첫번째 이야기");
-  const [chapter, setChapter] = useState(0);
-  const [fun, setFun] = useState(0);
+
+  /*메인스토리.json ID 관리*/
+  let eventLine = mainstroy[ID].story;
+  let buttonID = mainstroy[ID].Button;
 
   const buttonClick = () => {
-    setValue((value) => value + 1);
-    setbodyText((bodyText) => bodyText + objec[value]);
-    /*setStaus((status) => objec[value][value]);*/
+    setID((ID) => ID + 1);
+    setbodyText((bodyText) => bodyText + eventLine);
   };
 
   const buttonClick2 = () => {
-    setValue((value) => value + 2);
-    setbodyText((bodyText) => bodyText + objec[value]);
-    /*setStaus((status) => objec[value][value]);*/
+    setID((ID) => ID + 2);
+    setbodyText((bodyText) => bodyText + object[ID]);
   };
 
-  const storyTeller = () => {
+  const buttonMaker = () => {
     return (
       <Text>
         <Text onPress={() => buttonClick()}>계속</Text>
@@ -44,14 +44,14 @@ const TextInANest = () => {
               {"\n"}
             </Text>
           </Fade>
-          <Text>현재 페이지: {value}쪽</Text>
+          <Text>현재 페이지: {ID}쪽</Text>
           {"\n"}
           {"\n"}
-          <Text>현재 상태 : {value}</Text>
+          <Text>현재 상태 : {ID}</Text>
           <Text numberOfLines={5}>{bodyText}</Text>
           {"\n"}
           {"\n"}
-          {storyTeller()}
+          {buttonMaker()}
         </Text>
       </View>
     </View>

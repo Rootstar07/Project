@@ -1,7 +1,15 @@
 {
-    "0": "1",
-    "1": "2",
-    "2": "3",
-    "3": "4"
+    "0": {"Button": [{
+        "B1": "다가간다",
+        "B2": "도망친다",
+        "B3": "위협한다"}], 
+        "story": "AVV1"},
+        
+    "1": {"howManyButton": 2, 
+        "story": "AVV2"},
+    "2": {"howManyButton": 1, 
+        "story": "AVV3"},
+    "3": {"howManyButton": 1, 
+        "story": "AVV4"}
 
 }
