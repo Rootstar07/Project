@@ -1,12 +1,14 @@
 {
-    "스토리1" : 
-    [{
-        "현재 분기": 1,
-        "내용" : "ABC",
-        "능력치 변화" : {"체력": -1, "이성": -2, "탄약": -2},
-        "선택지" : {"1번" : "도망간다", "2번" : "싸운다"},
-        "스토리" : "ABCABABCACBAACVAAAAAA"
-    }]
+    "0": {"storytext": "지지 않는 꽃이 있다고?",
+        "buttonlist": [
+            {"buttonID" : 1,
+            "buttonText" : "수긍한다."},
+            {"buttonID" : 2,
+            "buttonText" : "고개를 젓는다."},
+            {"buttonID" : 3,
+            "buttonText" : "아무말도 하지 않는다."}
+            ]
+        }
 
 
 }
