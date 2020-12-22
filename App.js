@@ -13,8 +13,7 @@ const TextInANest = () => {
   return (
     <Text style={styles.baseText}>
       <Text>
-        {ID}
-        {"\n"}
+        {ID}쪽이네요{"\n"}
         {"\n"}
       </Text>
       <Text style={styles.titleText} onPress={pressButton}>
